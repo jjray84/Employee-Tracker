@@ -1,10 +1,29 @@
-INSERT INTO employee_db (id, first-name, last-name, title, department, salary, manager)
+USE employee_db;
+INSERT INTO departments (department)
+VALUES ('Sales'),
+       ('Engineer'),
+       ('Finance'),
+       ('Legal'); 
 
-VALUES (1, "John", "Smith", "Manager", "Sales", 85000, "null"),
-       (2, "Ed", "McCarthy", "Engineer", 75000, "null"),
-       (3, "Joe", "Blake", "Finance", 80000, "null"),
-       (4, "Juliana", "Crane", "Legal", 75000, "null"),
-       (5, "Frank", "Frink", "Finance", 70000, "Joe_Blake"),
-       (6, "Nobusuke", "Tagomi", "Legal", 70000, "Juliana_Crane"),
-       (7, "Martin", "Heusmann", "Sales", 70000, "John_Smith"),
-       (8, "Tashi", "Okamura", "Engineer", 70000, "Ed_McCarthy") 
+
+INSERT INTO roles (title, salary, department_id)
+VALUES ('Sales Lead', 100000, 1),
+       ('Salesperson', 75000, 1),
+       ('Lead Engineer', 100000, 2),
+       ('Engineer', 75000, 2),
+       ('Account Manager', 100000, 3),
+       ('Accountant', 75000, 3),
+       ('Legal Lead', 100000, 4),
+       ('Legal', 75000, 4); 
+
+INSERT INTO employees (role_id, first_name, last_name, manager_id)
+
+VALUES (1, "John", "Smith", null),
+       (2, "Martin", "Heusmann", 1), 
+       (3, "Ed", "McCarthy", null),
+       (4, "Tashi", "Okamura", 3),
+       (5, "Joe", "Blake", null),
+       (6, "Frank", "Frink", 5),
+       (7, "Juliana", "Crane", null),
+       (8, "Nobusuke", "Tagomi", 7);
+ 
